@@ -17,7 +17,7 @@ export class UserController {
   }
 
   @Get('/:email')
-  getUser(@Param() getUserDto: GetUserDto) {
-    return this.userService.getUser(getUserDto);
+  getUser(@Param('email') email) {
+    return this.userService.getUser(email);
   }
 }

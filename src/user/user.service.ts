@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { CreateUserDto, GetUserDto } from './user.dto';
 import { User } from './user.entity';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UserService {
@@ -13,16 +12,14 @@ export class UserService {
   ) {}
 
   createUser(createUserDto: CreateUserDto) {
-    let user = createUserDto;
-    user._id = uuidv4();
-    return this.userRepository.save(user);
+    return this.userRepository.save(new User(createUserDto));
   }
 
   getUsers(): Promise<User[]> {
     return this.userRepository.find();
   }
 
-  getUser(getUserDto: GetUserDto): Promise<User> {
-    return this.userRepository.findOne({});
+  getUser(email: any): Promise<User> {
+    return this.userRepository.findOne(email);
   }
 }
