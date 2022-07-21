@@ -1,0 +1,22 @@
+storage:
+  database:
+    cosmosdb:
+      active: true
+      type: mongodb
+      host: ""
+      port: 0
+      database: ""
+      username: ""
+      password: ""
+      url: ""
+      ssl: false
+    mysql:
+      active: false
+      type: mysql
+      host: ""
+      port: 0
+      database: ""
+      username: ""
+      password: ""
+      url: ""
+      ssl: false
