@@ -1,22 +1,19 @@
-storage:
-  database:
-    cosmosdb:
-      active: true
-      type: mongodb
-      host: ""
-      port: 0
-      database: ""
-      username: ""
-      password: ""
-      url: ""
-      ssl: false
-    mysql:
-      active: false
-      type: mysql
-      host: ""
-      port: 0
-      database: ""
-      username: ""
-      password: ""
-      url: ""
-      ssl: false
+database:
+  cosmosdb:
+    active: true
+    type: mongodb
+    host: 'mongodb+srv://devashish'
+    port: 
+    database: 'typeorm'
+    username: 'devashish'
+    password: 'mongodb'
+    url: 'mongodb+srv://devashish:mongodb@cluster0.ff0a9.mongodb.net/test'
+  mysql:
+    active: false
+    type: mysql
+    host: ''
+    port: 0
+    database: ''
+    username: ''
+    password: ''
+    url: ''

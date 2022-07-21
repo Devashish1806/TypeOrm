@@ -12,7 +12,6 @@ export class ConfigurationParser {
   private constructor() {
     this.__baseResourcePath = join(process.cwd(), 'resources');
     this.__parseConfig(this.__baseResourcePath);
-    console.log(JSON.stringify(this.__config));
   }
 
   static getInstance(): ConfigurationParser {
@@ -21,6 +20,10 @@ export class ConfigurationParser {
       Object.freeze(ConfigurationParser.__instance);
     }
     return ConfigurationParser.__instance;
+  }
+
+  get config() {
+    return this.__config;
   }
 
   private __parseConfig(resourceFolder: string) {
